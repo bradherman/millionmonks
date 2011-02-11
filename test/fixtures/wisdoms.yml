@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  quote: MyText
+  contributor: MyString
+  upvotes: 1
+  downvotes: 1
+  karma: 1
+
+two:
+  quote: MyText
+  contributor: MyString
+  upvotes: 1
+  downvotes: 1
+  karma: 1
