@@ -57,5 +57,6 @@ Millionmonks::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   match '/' => 'splash#index'
   match '/index' => 'splash#index'
+  match 'splash/index' => 'splash#index'
   root :to => "splash#index"
 end
