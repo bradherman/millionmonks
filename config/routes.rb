@@ -1,4 +1,4 @@
 Millionmonks::Application.routes.draw do
   resources :wisdoms
-  root :to => "wisdom#index"
+  root :to => "wisdoms#index"
 end
