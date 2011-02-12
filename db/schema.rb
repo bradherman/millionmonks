@@ -10,14 +10,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110211175549) do
+ActiveRecord::Schema.define(:version => 20110212040540) do
+
+  create_table "user_sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_sessions", ["session_id"], :name => "index_user_sessions_on_session_id"
+  add_index "user_sessions", ["updated_at"], :name => "index_user_sessions_on_updated_at"
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                                :null => false
+    t.string   "email",                                :null => false
+    t.string   "password"
+    t.integer  "karma",             :default => 0
+    t.integer  "age"
+    t.boolean  "admin",             :default => false
+    t.date     "birthday"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.integer  "login_count"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.boolean  "vote",          :default => false
+    t.integer  "voteable_id",                      :null => false
+    t.string   "voteable_type",                    :null => false
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["voteable_id", "voteable_type"], :name => "fk_voteables"
+  add_index "votes", ["voter_id", "voter_type", "voteable_id", "voteable_type"], :name => "uniq_one_vote_only", :unique => true
+  add_index "votes", ["voter_id", "voter_type"], :name => "fk_voters"
 
   create_table "wisdoms", :force => true do |t|
     t.text     "quote"
-    t.string   "contributor"
-    t.integer  "upvotes"
-    t.integer  "downvotes"
-    t.integer  "karma"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,23 @@
+= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f|
+  - if !f.error_messages==""
+    .notification.information.png_bg
+      %div= f.error_messages
+  - if flash[:notice]
+    .notification.information.png_bg
+      %div= flash[:notice]
+  %p
+    %label Login
+    = f.text_field :login, {:class => "text-input"}
+  .clear
+  %p
+    %label Password
+    = f.password_field :password, {:class => "text-input"}
+  .clear
+  %p#remember-password
+    = f.check_box :remember_me
+    Remember Me
+  .clear
+  %p
+    = f.submit "Sign In", {:class => "button"}
+    = " | "
+    = link_to "Sign Up", new_user_path

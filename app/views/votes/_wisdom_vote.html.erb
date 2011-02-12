@@ -1,0 +1,14 @@
+<% 
+#	unless wisdom.user == current_user ||
+#	!current_user ||
+#	current_user.voted_on?(wisdom)
+  if !current_user || (!(wisdom.user == current_user) && !current_user.voted_on?(wisdom))
+%>
+	<%= link_to "Up", wisdom_vote_path(:id => wisdom, :vote => :true),:remote => true
+	%> 
+	/
+	<%= link_to "Down", wisdom_vote_path(:id => wisdom, :vote => :false),:remote => true
+ 	%> 
+
+<% end %>
+Karma: <%= wisdom.votes_for - wisdom.votes_against %>

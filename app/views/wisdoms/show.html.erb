@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Quote:</b>
+  <%= @wisdom.quote %>
+</p>
+<p>
+  <b>Contributor</b>
+  <%= @wisdom.user.login %>
+</p>
+<p>
+  <%= render :partial => "votes/wisdom_vote", :locals => {:wisdom => @wisdom} %>
+</p>
+
+
+<%= link_to 'Edit', edit_wisdom_path(@wisdom) %> |
+<%= link_to 'Back', wisdoms_path %>

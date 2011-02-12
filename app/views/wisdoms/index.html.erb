@@ -1,1 +1,36 @@
-<p>millionmonks coming soon... 2/14/2011</p>
+<p><%= notice %>
+<h1>Listing wisdoms</h1>
+<p>Sort by | <%= link_to "Newest", root_path %> | <%= link_to "Highest Rated", root_path(:search => "best") %>
+<table>
+  <tr>
+    <th>Quote</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wisdoms.each do |wisdom| %>
+  <tr>
+    <td><%= wisdom.quote %></td>
+    <td>
+      <div id="votes_<%= wisdom.id %>" class="wisdom_votes">
+        <%= render :partial => "votes/wisdom_vote", :locals => {:wisdom => wisdom} %>
+      </div>
+    </td>
+    <td><%= link_to 'Show', wisdom %></td>
+
+    <% if can? :update, wisdom %>
+      <td><%= link_to 'Edit', edit_wisdom_path(wisdom) %></td>
+    <% end %>
+
+    <% if can? :destroy, wisdom %>
+      <td><%= link_to 'Destroy', wisdom, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wisdom', new_wisdom_path %>
