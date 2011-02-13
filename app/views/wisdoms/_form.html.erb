@@ -16,6 +16,7 @@
     <%= f.text_area :quote %>
   </div>
   <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :submitter_age, :value => current_user.age %>
   <div class="actions">
     <%= f.submit %>
   </div>

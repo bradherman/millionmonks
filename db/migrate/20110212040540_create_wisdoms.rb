@@ -3,6 +3,7 @@ class CreateWisdoms < ActiveRecord::Migration
     create_table :wisdoms do |t|
       t.text    :quote
       t.integer :user_id
+      t.integer :submitter_age
       t.timestamps
     end
   end

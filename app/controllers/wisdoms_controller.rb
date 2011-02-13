@@ -7,6 +7,9 @@ class WisdomsController < ApplicationController
     if params[:search] == "best"
       @wisdoms = Wisdom.all
       @wisdoms = @wisdoms.sort!{|a,b| b.karma <=> a.karma}
+    elsif params[:floor] and params[:ceiling]
+      @wisdoms = Wisdom.where(:submitter_age => (params[:floor]..params[:ceiling]))
+      @wisdoms = @wisdoms.sort!{|a,b| b.karma <=> a.karma}
     else
       @wisdoms = Wisdom.order("created_at DESC")
     end
