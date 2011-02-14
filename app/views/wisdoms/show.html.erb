@@ -12,6 +12,17 @@
   <%= render :partial => "votes/wisdom_vote", :locals => {:wisdom => @wisdom} %>
 </p>
 
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'millionmonks'; 
+    var disqus_identifier = 'wisdom_id_<%= @wisdom.id %>';
+    var disqus_url = 'http://millionmonks.com/wisdoms/<%= @wisdom.id %>';
 
-<%= link_to 'Edit', edit_wisdom_path(@wisdom) %> |
-<%= link_to 'Back', wisdoms_path %>
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

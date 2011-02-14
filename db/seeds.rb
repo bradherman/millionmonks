@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+User.create(:login => "testuser", :email => "test@test.com", :password => "password", :password_confirmation => "password", :birthday => "5/6/1986")
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 1)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 3)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 15, :karma => 4)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 1)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 10)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 12, :karma => 76)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 23)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 9)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 14)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 56, :karma => 9)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 10)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 87)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 85, :karma => 62)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 22, :karma => 8)
+Wisdom.create(:quote => "quote test", :user_id => 1, :submitter_age => 100, :karma => 82)

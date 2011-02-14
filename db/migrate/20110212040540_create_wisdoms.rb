@@ -4,6 +4,7 @@ class CreateWisdoms < ActiveRecord::Migration
       t.text    :quote
       t.integer :user_id
       t.integer :submitter_age
+      t.integer :karma, :default => 1
       t.timestamps
     end
   end

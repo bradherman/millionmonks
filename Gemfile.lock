@@ -94,4 +94,4 @@ DEPENDENCIES
   rails (= 3.0.3)
   rails3-generators
   sqlite3-ruby
-  will_paginate (~> 3.0.pre2)
+  will_paginate (~> 3.0.beta)

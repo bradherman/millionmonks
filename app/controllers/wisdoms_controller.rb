@@ -1,17 +1,18 @@
 class WisdomsController < ApplicationController
   before_filter :require_user, :only => [:edit, :update, :destroy, :vote_up, :vote_down]
-  
+  def splash
+  render :layout => false
+  end
   # GET /wisdoms
   # GET /wisdoms.xml
   def index
     if params[:search] == "best"
-      @wisdoms = Wisdom.all
-      @wisdoms = @wisdoms.sort!{|a,b| b.karma <=> a.karma}
+      @wisdoms = Wisdom.paginate :page => params[:page], :order => 'karma DESC'
     elsif params[:floor] and params[:ceiling]
       @wisdoms = Wisdom.where(:submitter_age => (params[:floor]..params[:ceiling]))
-      @wisdoms = @wisdoms.sort!{|a,b| b.karma <=> a.karma}
+      @wisdoms = @wisdoms.paginate :page => params[:page], :order => "karma DESC"
     else
-      @wisdoms = Wisdom.order("created_at DESC")
+      @wisdoms = Wisdom.paginate :page => params[:page], :order => "created_at DESC"
     end
        
     @title = "millionmonks | Share Your Wisdom"
@@ -57,7 +58,6 @@ class WisdomsController < ApplicationController
   # POST /wisdoms.xml
   def create
     @wisdom = Wisdom.new(params[:wisdom])
-
     respond_to do |format|
       if @wisdom.save
         format.html { redirect_to(@wisdom, :notice => 'Wisdom was successfully created.') }
@@ -109,6 +109,7 @@ class WisdomsController < ApplicationController
     else
       @wisdom = Wisdom.find(params[:id])
       current_user.vote(@wisdom, params[:vote])
+      @wisdom.karma = @wisdom.votes_for - @wisdom.votes_against + 1
       render :update do |page| 
         page.replace_html "votes_#{@wisdom.id}", :partial => "votes/wisdom_vote", :locals => {:wisdom => @wisdom}
       end
