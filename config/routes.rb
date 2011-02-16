@@ -11,7 +11,7 @@ Millionmonks::Application.routes.draw do
   #match       'user_sessions/new'       => 'user_sessions#new',     :as => "login"
   #match       'user_sessions/destroy'   => 'user_sessions#destroy', :as => "logout"
   #match       'wisdom/vote'             => 'wisdoms#vote',           :as => "wisdom_vote"
-  match       'wisdom/splash'           => 'wisdoms#splash'
+  #match       'wisdom/splash'           => 'wisdoms#splash'
   
   #resources :users do
   #  resources :votes
