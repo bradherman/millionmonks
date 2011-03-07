@@ -1,0 +1,12 @@
+.quote_content
+  .quote{:align => "left"}= w.quote
+  .quote_author= "by #{w.author}, #{time_ago_in_words(w.created_at)} ago"
+  %ul
+    /%li= link_to "&#8226; Comments".html_safe, "#"
+    = render :partial => "votes/wisdom_vote", :locals => { :wisdom => w }
+    - if can? :update, w
+      %li= link_to "Edit", edit_wisdom_path(w)
+    - if can? :destroy, w
+      %li= link_to "Destroy", w, :confirm => "Are you sure?", :method => :delete
+  %img{:width => "440", :height => "11", :src => "images/hr.jpg"}
+  .clear

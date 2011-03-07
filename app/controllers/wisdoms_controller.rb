@@ -18,6 +18,8 @@ class WisdomsController < ApplicationController
     @title = "millionmonks | Share Your Wisdom"
     authorize! :read, @wisdoms
     
+    @wisdom = Wisdom.new
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @wisdoms }

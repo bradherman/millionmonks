@@ -1,0 +1,13 @@
+- if current_user
+  = render :partial => "form"
+- else
+  %p{:style => "margin:18px 0 0 2px;"}
+    %textarea#quote_text.disabled{:disabled => "disabled"} Please login to post
+    %form{:method => "link", :action => login_path}
+      %button#sharewisdom.submit{:type => "submit"}
+.clear
+= render :partial => "filters"
+%br
+- @wisdoms.each do |w|
+  = render :partial => "wisdom", :locals => { :w => w }
+= will_paginate @wisdoms

@@ -1,0 +1,253 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {margin:0;padding:0;} 
+
+html, body { height: 100%; }
+body {
+	   background-image: url(../images/bg.jpg);
+	   margin: 0 0;
+	  
+	   
+}
+
+#wrapper {
+	   background-image: url(../images/blue_overlay.png);
+	   background-repeat: repeat-x;	
+	   min-height: 100%;
+	   
+}
+
+.quote_content{
+	  width: 440px;
+	  margin: auto;
+	  margin-top: 5px;
+}
+
+.quote_content ul{
+	  font-family: Arial;
+
+	  color: #c0d0d6;
+      float: right;	
+}
+
+.quote_content ul li{
+	  font-size: 9px;
+	  color: #c0d0d6; 
+	  text-decoration: none;	
+}
+
+.quote_content ul li:hover{
+	  color: #a2b6ba;
+      text-decoration: none;	
+}
+
+.quote{
+	  font-family: Arial;
+	  font-size: 12px;
+	  color: #a2a2a2;
+}
+
+.quote_author{
+	  font-family: Arial;
+	  font-size: 12px;
+	  float: left;
+	  color: #ff983d;
+	  font-weight: bold;
+}
+
+.quote_author a{
+	  color: #ff983d; 
+	   text-decoration: none; 
+}
+ 
+.quote_author a:hover{
+	  color: #ff983d;
+	  text-decoration: underline; 
+}
+
+
+#content{
+	   width: 900px; 
+	   margin-left: auto; 
+	   margin-right: auto;	
+	   
+	   overflow:auto;
+	padding-bottom: 209px;
+	   
+	 /*  border: green 4px dashed;*/
+}
+
+#filters{
+	   margin-top: 10px;
+}
+
+#inner_content{
+       margin-left: auto; 
+	   margin-right: auto; 
+	   background-color: #fdfdfa; 
+	   width: 478px; 
+	   border-color: #c2e2f5; 
+	   border-style: solid; 
+	   border-width: 1px;
+}
+
+#inner_content ul{
+	   font-family: Arial;
+	   color: #c0d0d6;
+	   font-weight: bold;
+	   list-style-type: none;
+	   font-size: 12px;
+	   
+	   
+	   display:inline-block;
+	
+}
+
+#inner_content ul li{ 
+	   
+	   display:inline;
+	   margin-left: 15px;
+	
+}
+
+#inner_content ul li a{
+	   color: #c0d0d6;	
+	   text-decoration: none;
+}
+
+#inner_content ul li a:hover{
+	   color: #a2b6ba;
+	   text-decoration: none;
+}
+
+
+#quote_text{
+       margin-left: 8px; 
+	   margin-top: -8px;
+	   float: left;	
+	   width:291px; height:22px;
+	   padding:4px;
+}
+
+#quote_text.disabled{
+	   background: #ccc;
+}
+
+
+#footer{
+	   height: 209px; 
+	   background-image: url(../images/bg_footer.jpg); 
+	   background-repeat: repeat-x; 
+	   background-position:bottom;
+	   
+	   position: relative;
+	margin-top: -209px; /* negative value of footer height */
+
+  text-align: center;
+
+}
+.disabled {font-style:italic;}
+
+
+#footer ul{
+       position: absolute;
+	   margin-top: 70px;
+}
+#footer ul li{
+       display:inline;
+	   margin-left: 15px;	
+	   font-family: arial;
+	   font-size: 12px; 
+	   font-weight: bold;
+}
+
+#footer ul a{
+	    color: #a58f73;	
+		font-weight: bold;
+	   text-decoration: none;
+
+}
+
+
+#footer ul a:hover{
+	   color: #d7c3a9;	
+	   	font-weight: bold;
+	   text-decoration: none;
+
+}
+
+#sharewisdom {
+	   background: url(../images/sharewisdom.png) 0 no-repeat; width: 154px; height: 33px;
+	   margin-right: 8px;
+	   background-image: url(../images/sharewisdom.png);
+	   border: 0;	
+	   margin-top: -8px;
+}
+
+#sharewisdom:hover {
+	   background-position: -154px 0;
+}
+
+#sharewisdom:active {
+	   background-position: -308px;
+}
+
+#signup{
+	   background: url(../images/signup.png) 0 no-repeat; 
+	   width: 154px; 
+	   height: 33px;
+	   background-image: url(../images/signup.png);
+	   border: 0;	
+}
+
+#signup:hover {
+	   background-position: -154px 0;
+}
+
+#signup:active {
+	   background-position: -308px;
+}
+
+.clear{
+	   clear: both;
+}
+
+#left_col{
+	   width: 688px;
+	   padding: 0 0px;
+	   text-align: center;
+	   float: left;
+	  /* border: blue 4px dashed; */
+}
+
+
+#right_col {
+	  
+	  float: left;
+	 /* border: red 4px dashed;*/
+	  width: 170px;
+	  padding-top: 115px; 
+}
+#demo-frame > div.demo { padding: 10px !important;}
+
+.pagination{
+	
+		 font-family: Arial;
+		 font-size: 12px;
+		 font-weight: bold;
+		 color: #ff983d;
+}
+
+.pagination a{
+	
+	 font-family: Arial;
+     color: #ff983d;
+	 font-weight: underline;
+}
+
+.pagination a:hover{
+	 font-family: Arial;
+     color: #ff983d;
+	 font-weight: none;
+}
