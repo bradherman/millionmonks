@@ -9,4 +9,8 @@ class Wisdom < ActiveRecord::Base
   def author
     User.find(self.user_id).login
   end
+  
+  def author_karma
+    User.find(self.user_id).karma
+  end
 end

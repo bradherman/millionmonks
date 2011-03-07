@@ -1,6 +1,6 @@
 .quote_content
   .quote{:align => "left"}= w.quote
-  .quote_author= "by #{w.author} (#{w.karma}), #{time_ago_in_words(w.created_at)} ago"
+  .quote_author= "by #{w.author} (#{w.author_karma}), #{time_ago_in_words(w.created_at)} ago"
   %ul
     /%li= link_to "&#8226; Comments".html_safe, "#"
     %span{:id => "votes_#{w.id}"}
