@@ -7,7 +7,7 @@
       = render :partial => "votes/wisdom_vote", :locals => { :wisdom => w }
     - if can? :update, w
       %li= link_to "Edit", edit_wisdom_path(w)
-    - if can? :destroy, w
-      %li= link_to "Destroy", w, :confirm => "Are you sure?", :method => :delete
+    /- if can? :destroy, w
+    /%li= link_to "Destroy", w, :confirm => "Are you sure?", :method => :delete
   %img{:width => "440", :height => "11", :src => "images/hr.jpg"}
   .clear
