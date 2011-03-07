@@ -112,6 +112,7 @@ class WisdomsController < ApplicationController
       @wisdom = Wisdom.find(params[:id])
       current_user.vote(@wisdom, params[:vote])
       @wisdom.karma = @wisdom.votes_for - @wisdom.votes_against + 1
+      @wisdom.save
       render :update do |page| 
         page.replace_html "votes_#{@wisdom.id}", :partial => "votes/wisdom_vote", :locals => {:wisdom => @wisdom}
       end

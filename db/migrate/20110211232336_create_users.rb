@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :login,             :null => false
       t.string    :email,             :null => false
       t.string    :password
-      t.integer   :karma,             :default => 0
+      t.integer   :karma,             :default => 1
       t.integer   :age
       t.boolean   :admin,             :default => false
       t.date      :birthday
