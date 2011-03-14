@@ -67,5 +67,17 @@
   })();
 
 </script>
+<script type="text/javascript">
+  jQuery("#slider-range").slider({
+		range: true,
+		min: 0,
+		max: 100,
+		values: [ 0, 100 ],
+		stop: function( event, ui ) {
+			jQuery("#agelink").attr("href", "wisdoms/search?ceiling="+ui.values[1]+"&floor="+ui.values[0]);
+			jQuery("#agelink").trigger("click");
+		}
+	});
+</script>
 </body>
 </html>

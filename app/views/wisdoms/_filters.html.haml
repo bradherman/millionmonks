@@ -3,6 +3,6 @@
     %ul
       %li= link_to "latest", search_path(:search => "latest"), :remote => true
       %li= link_to "most popular", search_path(:search => "best"), :remote => true
-    /  %li= link_to "age range", "#"
-    /.demo{:style => " height: 10px; width: 100px ;  display:inline-block;"}
-    /  #slider-range
+      %li= link_to "age range", search_path(:floor => "0", :ceiling => "100"), :id => "agelink", :remote => true
+      .demo{:style => " height: 10px; width: 100px ; margin-left:10px; display:inline-block;"}
+        #slider-range
