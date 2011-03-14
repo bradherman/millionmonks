@@ -1,3 +1,6 @@
-- wisdoms.each do |w|
-  = render :partial => "wisdom", :locals => { :w => w }
-= will_paginate wisdoms
+- if wisdoms.size == 0
+  %p We're sorry, but no wisdom has been shared with that criteria yet!
+- else
+  - wisdoms.each do |w|
+    = render :partial => "wisdom", :locals => { :w => w }
+  = will_paginate wisdoms
