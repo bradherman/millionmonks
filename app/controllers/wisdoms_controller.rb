@@ -6,23 +6,29 @@ class WisdomsController < ApplicationController
   # GET /wisdoms
   # GET /wisdoms.xml
   def index
-    if params[:search] == "best"
-      @wisdoms = Wisdom.paginate :page => params[:page], :order => 'karma DESC'
-    elsif params[:floor] and params[:ceiling]
-      @wisdoms = Wisdom.where(:submitter_age => (params[:floor]..params[:ceiling]))
-      @wisdoms = @wisdoms.paginate :page => params[:page], :order => "karma DESC"
-    else
-      @wisdoms = Wisdom.paginate :page => params[:page], :order => "created_at DESC"
-    end
-       
+    @wisdoms = Wisdom.paginate :page => params[:page], :order => "created_at DESC"
     @title = "millionmonks | Share Your Wisdom"
     authorize! :read, @wisdoms
-    
     @wisdom = Wisdom.new
     
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @wisdoms }
+    end
+  end
+  
+  def search
+    if params[:search] == "best"
+      @wisdoms = Wisdom.paginate :page => params[:page], :order => 'karma DESC'
+    elsif params[:floor] and params[:ceiling]
+      @wisdoms = Wisdom.where(:submitter_age => (params[:floor]..params[:ceiling]))
+      @wisdoms = @wisdoms.paginate :page => params[:page], :order => "karma DESC"
+    elsif params[:search] == "latest"
+      @wisdoms = Wisdom.paginate :page => params[:page], :order => "created_at DESC"
+    end
+    
+    render :update do |page| 
+      page.replace_html "wisdoms", :partial => "wisdoms_list", :locals => {:wisdoms => @wisdoms}
     end
   end
 
@@ -99,6 +105,10 @@ class WisdomsController < ApplicationController
       format.html { redirect_to(wisdoms_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def about
+    @title = "MillionMonks | About"
   end
   
   def vote

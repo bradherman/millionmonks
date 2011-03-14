@@ -1,8 +1,8 @@
 #filters
   %p
     %ul
-      %li= link_to "latest", root_path
-      %li= link_to "most popular", root_path(:search => "best")
+      %li= link_to "latest", search_path(:search => "latest"), :remote => true
+      %li= link_to "most popular", search_path(:search => "best"), :remote => true
     /  %li= link_to "age range", "#"
     /.demo{:style => " height: 10px; width: 100px ;  display:inline-block;"}
     /  #slider-range

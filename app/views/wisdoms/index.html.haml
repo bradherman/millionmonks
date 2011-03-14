@@ -8,6 +8,5 @@
 .clear
 = render :partial => "filters"
 %br
-- @wisdoms.each do |w|
-  = render :partial => "wisdom", :locals => { :w => w }
-= will_paginate @wisdoms
+#wisdoms
+  = render :partial => "wisdoms_list", :locals => { :wisdoms => @wisdoms }
