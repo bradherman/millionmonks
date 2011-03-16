@@ -26,7 +26,7 @@ class WisdomsController < ApplicationController
     elsif params[:search] == "latest"
       @wisdoms = Wisdom.paginate :page => params[:page], :order => "created_at DESC"
     end
-    
+    @count = 1
     render :update do |page| 
       page.replace_html "wisdoms", :partial => "wisdoms_list", :locals => {:wisdoms => @wisdoms}
     end

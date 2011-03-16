@@ -5,19 +5,19 @@
   - if flash[:notice]
     .notification.information.png_bg
       %div= flash[:notice]
-  %p
-    %label Login
-    = f.text_field :login, {:class => "text-input"}
+  %p{:style => "margin-top:20px;position:relative"}
+    %label{:style => "position:absolute;left:100px;"} Login
+    = f.text_field :login, {:class => "text-input", :style => "margin-left:50px"}
   .clear
-  %p
-    %label Password
-    = f.password_field :password, {:class => "text-input"}
+  %p{:style => "margin-top:20px;position:relative"}
+    %label{:style => "position:absolute;left:100px;"} Password
+    = f.password_field :password, {:class => "text-input", :style => "margin-left:50px"}
   .clear
-  %p#remember-password
+  %p#remember-password{:style => "margin-top:20px;"}
     = f.check_box :remember_me
     Remember Me
   .clear
-  %p
+  %p{:style => "margin-top:20px;"}
     = f.submit "Sign In", {:class => "button"}
-    = " | "
+    = " or "
     = link_to "Sign Up", new_user_path

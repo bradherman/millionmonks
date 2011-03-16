@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :login %><br />
+  <div class="field" style="margin-top:10px;">
+    <%= f.label :login %>
     <%= f.text_field :login %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="field" style="margin-top:10px;">
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-  <div>
-    <%= f.label :birthday %><br />
+  <div style="margin-top:10px;">
+    <%= f.label :birthday %>
     <%= f.date_select :birthday, :start_year => Date.current.year-100, :end_year => Date.current.year %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="field" style="margin-top:10px;">
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="field" style="margin-top:10px;">
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>  
-  <div class="actions">
+  <div class="actions" style="margin-top:10px;">
     <%= f.submit %>
   </div>
 <% end %>

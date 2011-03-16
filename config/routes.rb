@@ -4,6 +4,7 @@ Millionmonks::Application.routes.draw do
   match       'user_sessions/destroy'   => 'user_sessions#destroy', :as => "logout"
   match       'wisdom/vote'             => 'wisdoms#vote',          :as => "wisdom_vote"
   match       'wisdoms/search'          => "wisdoms#search",        :as => "search"
+  match       'wisdoms/load'            => "wisdoms#load",          :as => "load_more"
   match       'wisdom/splash'           => 'wisdoms#splash'
   
   resource    :account,       :controller => "users"
