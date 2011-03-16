@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
       if @user_session.save
         format.html { redirect_to root_path, :notice => "Login successful!" }
       else
-        format.html { redirect_to(new_user_session_path, :notice => @user_session.errors) }
+        format.html { redirect_to(login_path, :notice => @user_session.errors) }
       end
     end
   end

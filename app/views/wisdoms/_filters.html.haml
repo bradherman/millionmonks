@@ -1,6 +1,7 @@
 #filters
   %p
     %ul
+      %li view by:
       %li= link_to "latest", search_path(:search => "latest"), :remote => true
       %li= link_to "most popular", search_path(:search => "best"), :remote => true
       %li= link_to "age range", search_path(:floor => "0", :ceiling => "100"), :id => "agelink", :remote => true

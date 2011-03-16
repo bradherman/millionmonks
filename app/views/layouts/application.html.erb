@@ -24,7 +24,7 @@
      
   <div id="right_col">
     <% if current_user %>
-      <p>Welcome <%= current_user.login %> | <%= link_to "Logout", logout_path %></p>
+      <p style="margin-left:-80px;">Welcome <%= current_user.login %><br /><%= link_to "Logout", logout_path %></p>
     <% else %>
       <form method="link" action="/users/new">
       <button type="submit" id="signup" class="submit" style="position: absolute; margin-top: 2px; margin-left: -80px;"></button></form>
