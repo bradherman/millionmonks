@@ -4,5 +4,7 @@
       %li= link_to "latest", search_path(:search => "latest"), :remote => true
       %li= link_to "most popular", search_path(:search => "best"), :remote => true
       %li= link_to "age range", search_path(:floor => "0", :ceiling => "100"), :id => "agelink", :remote => true
-      .demo{:style => " height: 10px; width: 100px ; margin-left:10px; display:inline-block;"}
+      .demo{:style => " height: 10px; width: 100px ; margin-left:10px; display:inline-block;position:relative;"}
         #slider-range
+        #top-range{:style => "position:absolute;top:8px;"} 0
+        #bottom-range{:style => "position:absolute;right:0;top:8px;"} 100

@@ -251,3 +251,4 @@ body {
      color: #ff983d;
 	 font-weight: none;
 }
+a, a:hover, a:visited, a:active, a * {outline:none !important;border:none !important;}
